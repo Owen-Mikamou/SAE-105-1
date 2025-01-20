@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Traitement des données</title>
+    <style>
+        body {
+            background-image: url('istockphoto-1412282189-612x612.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        center {
+            margin-top: 20px;
+        }
+        .interpretation {
+            background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour améliorer la lisibilité */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>MIKAMOU MAYELE OWEN Willifried</h1>
+        <h2>Projet SAE 15 groupe B1</h2>
+        <p>Bienvenu sur la page web du traitement des données. <br> Je vais vous présenter les informations et données pertinentes que j'ai trouvées dans le fichier à traiter.</p>
+        <h3>Nombre total des trames échangées</h3>
+        <p>11016</p>
+        <br>
+        <h3>Drapeaux (Flags)</h3>
+        <p>Nombre de flags [P] (PUSH) = 1673</p>
+        <p>Nombre de flags [S] (SYN) = 2046</p>
+        <p>Nombre de flags [.] (ACK) = 6961</p>
+        <br>
+        <img src="graphe1.png" alt="Graphique des flags">
+        <h3>Nombre des requests et replies</h3>
+        <p>Request = 42</p>
+        <p>Reply = 42</p>
+        <br>
+        <img src="graphe2.png" alt="Graphique des requêtes et réponses">
+        <h3>Statistiques entre seq, windows et ack</h3>
+        <p>Nombre de seq = 8201</p>
+        <p>Nombre de win = 10766</p>
+        <p>Nombre de ack = 8768</p>
+        <br>
+        <img src="graphe3.png" alt="Graphique des séquences, accusés de réception et fenêtres">
+    </center>
+
+    <div class="interpretation">
+        
+    <h3>Interprétation des résultats</h3>
+    <p><strong>DNS NXDomain:</strong> Un nombre élevé de paquets DNS avec des erreurs NXDomain peut indiquer une attaque par déni de service (DoS) ciblant le serveur DNS ou des tentatives de résolution de noms de domaine inexistants.</p>
+    <p><strong>Suspicious SYN:</strong> Un nombre élevé de paquets SYN sans les paquets correspondants (SYN-ACK) peut indiquer une attaque par SYN flood, qui est une forme de DoS visant à épuiser les ressources du serveur en envoyant de nombreuses requêtes de connexion incomplètes.</p>
+    <p><strong>Repeated Payload:</strong> La présence de paquets avec des charges utiles répétées peut indiquer une tentative de contournement de la détection d'intrusion ou une attaque par injection de paquets.</p>
+    <p>L’analyse de ces données m’a permis de savoir qu’il s’agit d’une attaque DDoS car d'une part il y a non seulement une récurrence de demandes de connexion avec la même adresse source et au même moment, d'autre part nous sommes également censés être sur un réseau local où l'on n’a pas besoin de se connecter à distance, mais ici nous observons une demande de connexion à distance avec SSH, ce qui prouve qu’il s’agit d’un intrus.</p>
+      <!-- Intégration de l'interprétation conditionnelle -->
+    </div>
+</body>
+</html>
